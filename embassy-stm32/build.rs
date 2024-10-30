@@ -226,7 +226,7 @@ fn main() {
                 "TIM20", "TIM8", "TIM1", //ADV
             ]
             .iter()
-            .find(|tim| singletons.contains(&tim.to_string())).expect("time-driver-any requested, but the chip doesn't have TIM1, TIM2, TIM3, TIM4, TIM5, TIM8, TIM9, TIM12, TIM15, TIM20, TIM21, TIM22, TIM23 or TIM24.")
+            .find(|tim| singletons.contains(&tim.to_string())).expect(&format!("time-driver-any requested, but the chip doesn't have TIM1, TIM2, TIM3, TIM4, TIM5, TIM8, TIM9, TIM12, TIM15, TIM20, TIM21, TIM22, TIM23 or TIM24. {:?}", singletons))
         }
         _ => panic!("unknown time_driver {:?}", time_driver),
     };
